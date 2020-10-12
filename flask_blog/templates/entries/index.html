@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="row mx-0 " style="height:60px;">
+    <div class="col-7" style="background-color: white;">
+        <h3>名前</h3> 
+    </div>
+    <div class="col-5" style="background-color: white;">
+        <h3>rec</h3> 
+    </div>
+</div>
+
+<div class="row mx-0" style="height: 175px;">
+
+    <div class="col-7">
+        <div class="mt-3 ml-3">
+            <h3>呼吸数</h3>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="text-center">
+            <h4>呼吸グラフ</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row mx-0" style="height: 175px;">
+
+    <div class="col-7" style="background-color: violet;">
+        <div class="mt-3 ml-3">
+            <h3>脈拍数</h3>
+        </div>
+    </div>
+
+    <div class="col-5" style="background-color: yellowgreen;">
+        <div class="text-center">
+            脈拍グラフ
+        </div>
+    </div>
+</div>
+
+
+<div class="row mx-0" style="height:130px;">
+    <div class="col-7 text-center align-self-center pb-4 "style="">
+        <h2> 状態：{{ status }} </h2>
+    </div>
+    <div class="col-5 text-center align-self-center">
+        <i class="far fa-smile fa-6x "></i>
+    </div>
+</div>
+
+<div class="row mx-0" style="height:63px; background-color: whitesmoke;">
+
+
+    <div class="col ml-4 text-center align-self-center">
+
+        <button type="button" class=".page-link.text-dark.d-inline-block px-4"
+            style=" border: none; ">
+            <i class="fas fa-microphone fa-3x"></i>
+        </button>
+    </div>
+    <div class="col mr-4 text-center align-self-center">
+
+        <button type="button" class=".page-link.text-dark.d-inline-block px-4 "
+            style=" border: none;">
+            <i class="fas fa-stop fa-3x"></i>
+        </button>
+    </div>
+</div>
+{% endblock %}

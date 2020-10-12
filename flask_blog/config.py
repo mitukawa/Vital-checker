@@ -1,0 +1,3 @@
+DEBUG = True
+USERNAME = 'yuji'
+PASSWORD = '0705'

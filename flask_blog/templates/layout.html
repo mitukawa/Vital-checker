@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="js">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="https://kit.fontawesome.com/f5684cbb95.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid-xs ">
+    <header class="sticky-top">
+
+        <nav class="navbar navbar-expand-xs navbar-light px-3" style=" background-color: whitesmoke;">
+            <a class="navbar-brand">生体音メーター(仮)</a>
+            <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav text-left ml-3">
+                    <li class="nav-item ">
+                        <a class="navbar-brand mx-0" href="/">
+                            <i class="fas fa-home mx-2"> </i>ホーム</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="navbar-brand mx-0" href="/login" tabindex="-1" aria-disabled="true">
+                            <i class="fab fa-bluetooth mx-2"></i> 接続</a>
+                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand mx-0" href="/login" tabindex="-1" aria-disabled="true">
+                            <i class="fas fa-history mx-2"> </i>履歴</a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <div class="mt-2">
+    
+            {% block body %}{% endblock %}
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
