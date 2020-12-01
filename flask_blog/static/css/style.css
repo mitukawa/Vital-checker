@@ -29,14 +29,10 @@
   color:indianred; 
 }
 
-<<<<<<< HEAD
 #rec-button {
   cursor: pointer;
 }
 
 #stop-button {
-=======
-#button {
->>>>>>> 505f69b34892ca6dd82a355ccfd080651d3aa64c
   cursor: pointer;
 }
