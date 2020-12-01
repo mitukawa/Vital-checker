@@ -1,5 +1,8 @@
 from flask import request, redirect, url_for, render_template, flash, session
 from flask_blog import app
+import os
+from time import sleep 
+
 
 @app.route("/")
 def show_entries():
@@ -27,5 +30,15 @@ def logout():
 @app.route("/index")
 def index():
     return render_template('index.html')
+
+@app.route("/voice_analysis", methods=["POST"])
+def voice_analysis():
+    print("strat")
+    upload_file = request.files['rec_data']
+    upload_file.save('./flask_blog/tmp/wav/rec.wav')
+    print("end")
+    
+    # upload_file.save(os.path.join('/tmp/wav/','rec.wav' ))
+    return "0"
 
 
