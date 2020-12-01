@@ -28,3 +28,11 @@
 .size{
   color:indianred; 
 }
+
+#rec-button {
+  cursor: pointer;
+}
+
+#stop-button {
+  cursor: pointer;
+}
