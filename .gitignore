@@ -1,4 +1,5 @@
 test.html
+flask_blog/tmp/wav/rec.wav
 # Logs
 logs
 *.log

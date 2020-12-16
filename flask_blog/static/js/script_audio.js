@@ -2,6 +2,7 @@ var id;
 var counter = 0;
 var rec_button = document.getElementById("rec-button");
 var stop_button = document.getElementById("stop-button");
+var upload;
 // 録音したデータをサーバーにアップロードする関数
 // 入力：音声（Blob）
 function upload_wav(blob) {
@@ -15,7 +16,9 @@ function upload_wav(blob) {
         contentType: false
     }).done(function (data) {
         console.log(data);
-        output_val();
+        var val_p = p+Math.floor(Math.random() * 3) + -1;
+        var val_r = r+Math.floor(Math.random() * 3) + -1;
+        output_val(val_p, val_r);
     });
 }
 
@@ -39,7 +42,8 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             $("#rec_icon").toggleClass("fas fa-record-vinyl size");
             rec_button.disabled = true;
             stop_button.disabled = false;
-            mediaRecorder.start()
+            mediaRecorder.start();
+            upload = true;
             console.log(mediaRecorder.state);
             console.log('recorder started');
 
@@ -58,6 +62,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
 
         stop_button.onclick = function (e) {
+            upload = false;
             mediaRecorder.stop();
             $("#rec_icon").toggleClass("fas fa-record-vinyl size");
             clearTimeout(id);
@@ -73,15 +78,17 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("data available after MediaRecorder.stop() called.");
 
             // 音声データを送信できる形式(Blob)に変換
-            const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
-            chunks = [];
-            upload_wav(blob);
+            if (upload){
+                const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
+                chunks = [];
+                upload_wav(blob);
+                const audioURL = window.URL.createObjectURL(blob);
+                document.getElementById("dl").href = audioURL;
+                document.getElementById("dl").download = 'sample.wav';
+                
+                console.log("recorder stopped");
+            }
 
-            const audioURL = window.URL.createObjectURL(blob);
-            document.getElementById("dl").href = audioURL;
-            document.getElementById("dl").download = 'sample.wav';
-            
-            console.log("recorder stopped");
 
         }
         mediaRecorder.ondataavailable = function (e) {

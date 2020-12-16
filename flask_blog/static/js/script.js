@@ -1,22 +1,11 @@
 
 var r = 18;
-var p = Math.floor( Math.random() * (93 - 63 + 1) + 63);
+var p = 90;
 function output_val(val_p, val_r){
-    var val_p = p+Math.floor(Math.random() * 5) + -5;
-    var val_r = r+Math.floor(Math.random() * 2) + -2;
-    if (Math.random()<0.01){
-        var val_r = 11;
-    }
-    if (Math.random()<0.1){
-        var val_r = 26;
-    }
 
-    if (Math.random()<0.01){
-        var val_p = 50;
-    }
-    if (Math.random()<0.1){
-        var val_p = 110;
-    }
+    // val_r=0
+    // val_r=30
+
     document.getElementById("r_rate_val").innerHTML = String(val_r);
     document.getElementById("p_rate_val").innerHTML = String(val_p);
 
