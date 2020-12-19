@@ -1,6 +1,6 @@
 
 var r = 18;
-var p = 90;
+var p = 100;
 function output_val(val_p, val_r){
 
     // val_r=0

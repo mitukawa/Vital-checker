@@ -17,7 +17,7 @@ function upload_wav(blob) {
     }).done(function (data) {
         console.log(data);
         var val_p = p+Math.floor(Math.random() * 3) + -1;
-        var val_r = r+Math.floor(Math.random() * 3) + -1;
+        var val_r = r+Math.floor(Math.random() * 4) + -1;
         output_val(val_p, val_r);
     });
 }
@@ -57,7 +57,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 console.log(mediaRecorder.state);
                 console.log('recorder started');
 
-            }, 6000);
+            }, 3000);
         }
 
 
